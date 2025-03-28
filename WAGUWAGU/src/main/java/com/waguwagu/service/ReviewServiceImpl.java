@@ -34,6 +34,11 @@ public class ReviewServiceImpl implements ReviewService {
 	}
 
 	@Override
+	public boolean modifyReview(Review review) {
+		return false;
+	}
+
+	@Override
 	public boolean removeReview(int reviewId) {
 		return false;
 	}
