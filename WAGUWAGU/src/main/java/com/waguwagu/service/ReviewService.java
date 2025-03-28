@@ -15,6 +15,9 @@ public interface ReviewService {
 	//리뷰 작성
 	abstract boolean writeReview(Review review);
 	
+	//리뷰 수정
+	abstract boolean modifyReview(Review review);
+	
 	//리뷰 삭제
 	abstract boolean removeReview(int reviewId);
 
