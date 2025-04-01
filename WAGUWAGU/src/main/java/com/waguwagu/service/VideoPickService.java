@@ -13,7 +13,7 @@ public interface VideoPickService {
 	public abstract boolean removePick(String userId, int videoId);
 	
 	//특정 사용자가 찜한 영상 목록
-	public abstract List<Video> getPickedVideosByUser(String userId);
+	public abstract List<Video> getPickedVideos(String userId);
 	
 	//특정 영상의 찜 개수
 	public abstract int gePickCntOfVideo(int videoId);
