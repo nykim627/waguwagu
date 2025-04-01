@@ -28,6 +28,10 @@ public class VideoPickController extends HttpServlet {
 			break;
 		case "remove":
 			doRemovePick(request, response);
+			break;
+		case "getPickedVds":
+			doGetPickedVideos(request, response);
+			break;
 		case "isPicked":
 			doIsPicked(request, response);
 		default:
@@ -45,6 +49,10 @@ public class VideoPickController extends HttpServlet {
 	private void doRemovePick(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	private void doGetPickedVideos(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
 	}
 
 	private void doIsPicked(HttpServletRequest request, HttpServletResponse response) {

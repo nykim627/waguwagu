@@ -30,7 +30,7 @@ public class VideoPickServiceImpl implements VideoPickService{
 	}
 
 	@Override
-	public List<Video> getPickedVideosByUser(String userId) {
+	public List<Video> getPickedVideos(String userId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
