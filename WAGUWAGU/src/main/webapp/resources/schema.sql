@@ -40,6 +40,3 @@ USE waguwagu;
  FOREIGN KEY (reviewWriter) REFERENCES user(userId),
  FOREIGN KEY (videoId) REFERENCES video(videoId)
  );
- 
- INSERT INTO video (videoTitle, videoUrl, videoImgUrl, videoLevel, videoCat) VALUES
-("[종이컵계랑] 수건 케이크 만들기!", "https://www.youtube.com/embed/xtW8mjglyfY", "https://img.youtube.com/vi/xtW8mjglyfY/0.jpg");
