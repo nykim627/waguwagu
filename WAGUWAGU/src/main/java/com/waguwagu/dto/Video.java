@@ -4,7 +4,6 @@ public class Video {
 	private int videoId;
 	private String videoOwner;
 	private String getVideoOwner;
-
 	private String videoTitle;
 	private String videoUrl;
 	private String videoImgUrl;
@@ -95,6 +94,22 @@ public class Video {
 	}
 	
 	
+	public String getVideoOwner() {
+		return videoOwner;
+	}
+
+	public void setVideoOwner(String videoOwner) {
+		this.videoOwner = videoOwner;
+	}
+
+	public int getPickCount() {
+		return pickCount;
+	}
+
+	public void setPickCount(int pickCount) {
+		this.pickCount = pickCount;
+	}
+
 	@Override
 	public String toString() {
 		return "Video [videoId=" + videoId + ", videoOwner=" + videoOwner + ", videoTitle=" + videoTitle + ", videoUrl="
