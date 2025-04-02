@@ -42,11 +42,30 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 
 	//toString
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", password=" + password + ", email=" + email + "]";
+		return "User [userId=" + userId + ", password=" + password + ", name=" + name + ", gender=" + gender
+				+ ", email=" + email + "]";
 	}
+
+	
 
 }
