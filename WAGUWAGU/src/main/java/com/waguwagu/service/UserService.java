@@ -5,7 +5,7 @@ import com.waguwagu.dto.User;
 public interface UserService {
 	
     //로그인
-	boolean loginUser(String userId, String password);
+	User loginUser(String userId, String password);
 	
 	//회원가입
 	boolean joinUser(User user);
