@@ -17,11 +17,8 @@ public class UserServiceImpl implements UserService {
 
 	//로그인
 	@Override
-	public boolean loginUser(String userId, String password) {
-		if(dao.validateUser(userId, password) == null) {
-			return false;
-		}
-		return true;
+	public User loginUser(String userId, String password) {
+		return dao.validateUser(userId, password);
 	}
 
 	//회원가입
