@@ -70,7 +70,7 @@ public class UserController extends HttpServlet {
 			response.sendRedirect("/main"); 
 		}else {
 			//로그인 실패 -> 로그인 페이지로 돌아가기
-			request.setAttribute("errorMessage",  "아이디 또는 비밀번호가 일치하지 않습니다.");
+			request.setAttribute("errorMessage", "아이디 또는 비밀번호가 일치하지 않습니다.");
 			request.getRequestDispatcher("/WEB-INF/user/loginform.jsp").forward(request, response);
 		}
 		

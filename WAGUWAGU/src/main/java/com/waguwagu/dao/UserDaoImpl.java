@@ -39,34 +39,33 @@ public class UserDaoImpl implements UserDao {
 
 	//사용자 인증(로그인)
 	@Override
-	public boolean validateUser(String userId, String password) {
+	public User validateUser(String userId, String password) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "SELECT * FROM USER WHERE userId = ?";
-		User user = new User();
+		String sql = "SELECT * FROM USER WHERE userId = ? and userPassword = ?";
+		User user = null;
 		
 		try {
 			conn = util.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, userId);
-			
+			pstmt.setString(2, password);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
+				user = new User();
 				user.setUserId(rs.getString("userId"));
 				user.setPassword(rs.getString("userPassword"));
 				user.setName(rs.getString("userName"));
 				user.setEmail(rs.getString("userEmail"));
 				user.setGender(rs.getString("userGender"));
-			}else {
-				return false;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			util.close(rs, pstmt, conn);
 		}
-		return true;
+		return user;
 	}
 
 	//사용자 삭제(회원탈퇴)
