@@ -11,5 +11,3 @@
 ("얼얼함도 맵기도 내가 조절한다! DIY 마라탕 레시피", "https://youtu.be/IaMreOyefvI?si=1TsiUcpOBhhw2539", "https://img.youtube.com/vi/IaMreOyefvI/0.jpg", "중", "중식"),
 ("지옥에서 온 계란, 에그인헬: EGGS IN HELL (SIMPLE SHAKSHUKA) : 꿀키", "https://youtu.be/F5ESmoCh77k?si=u4B7Jw7a1phdf3-k", "https://img.youtube.com/vi/F5ESmoCh77k/0.jpg", "상", "양식"),
 ("홈메이드 미소라멘 : 일본 전국 1위 라멘집의 레시피! 세상 가장 녹진하고 농후한 국물에 대감동했습니다... (味噌ラーメン)", "https://youtu.be/qfB7idZnZWE?si=o_8YmNKUiKsFG1az", "https://img.youtube.com/vi/qfB7idZnZWE/0.jpg", "상", "일식");
-
-
