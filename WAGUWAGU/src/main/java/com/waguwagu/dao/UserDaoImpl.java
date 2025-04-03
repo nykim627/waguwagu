@@ -107,7 +107,19 @@ public class UserDaoImpl implements UserDao {
 
 	//사용자 삭제(회원탈퇴)
 	@Override
-	public boolean deleteUser(String userId) {
+	public boolean deleteUser(User user) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "DELETE FROM USER WHERE userId = ?";
+		try {
+			conn = util.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, user.getUserId());
+			int rs = pstmt.executeUpdate();
+			if(rs==1) return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return false;
 	}
 
