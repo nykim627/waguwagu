@@ -15,6 +15,7 @@
 		<input type="password" name="userPassword" placeholder="비밀번호" required>
 		<button type="submit">로그인</button>
 	</form>
+	<a href="user?act=registform">회원가입</a>
 	
 	<!-- 로그인 실패 시 alert 출력 -->
 	<%
