@@ -34,4 +34,10 @@ public class UserServiceImpl implements UserService {
 		return dao.saveUser(user); //회원가입한 유저 정보 DB에 저장
 	}
 
+	//회원탈퇴
+	@Override
+	public boolean deleteUser(User user) {
+		return dao.deleteUser(user); //유저 정보 DB에서 삭제
+	}
+
 }

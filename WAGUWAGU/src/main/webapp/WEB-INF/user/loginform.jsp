@@ -17,7 +17,7 @@
 	</form>
 	<a href="user?act=registform">회원가입</a>
 	
-	<!-- 로그인 실패 시 alert 출력 -->
+	<!-- alert 출력 : 로그인 실패, 회원가입 성공 등 -->
 	<%
 		String errorMessage = (String) request.getAttribute("errorMessage");
 		if(errorMessage!=null){

@@ -12,5 +12,8 @@ public interface UserService {
 	
 	//회원가입
 	boolean joinUser(User user);
+	
+	//회원탈퇴
+	boolean deleteUser(User user);
 
 }

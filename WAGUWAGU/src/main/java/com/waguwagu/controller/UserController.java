@@ -29,11 +29,15 @@ public class UserController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	String act = request.getParameter("act");
-    	System.out.println(act);
+    	System.out.println("service action : "+act);
     	
     	switch(act) {
+    	case "deleteId":
+    		doDeleteId(request, response);
+    		break;
     	case "checkId":
     		doCheckId(request, response);
+    		break;
     	case "loginform":
     		doLoginForm(request, response);
     		break;
@@ -51,6 +55,28 @@ public class UserController extends HttpServlet {
     		break;
     	}
     }
+
+	private void doDeleteId(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		HttpSession session = request.getSession();
+		User user = (User) session.getAttribute("loggedInUser");
+		
+		if(user==null) { //세션이 없거나 유저 정보가 없는 경우 로그인 페이지로 이동
+			request.getRequestDispatcher("/WEB-INF/user/loginform.jsp").forward(request, response);
+		}
+		
+		//회원탈퇴 서비스 호출
+		if(service.deleteUser(user)) {
+			//회원탈퇴 성공 -> 메인페이지로 이동
+			session.invalidate(); //세션 삭제
+			session = request.getSession(); //새 세션 생성 (메시지 저장용)
+			session.setAttribute("errorMessage", "회원탈퇴가 완료되었습니다."); //세션에 메시지 저장(리다이렉트 시 요청 새로 생김)
+			response.sendRedirect("index.jsp");
+		}else {
+			//회원탈퇴 실패 -> 메인페이지로 이동
+			session.setAttribute("errorMessage", "알 수 없는 이유로 회원탈퇴에 실패하였습니다. 다시 시도해주세요.");
+			response.sendRedirect("index.jsp");
+		}
+	}
 
 	private void doCheckId(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userId = request.getParameter("userId");
