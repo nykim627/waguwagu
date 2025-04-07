@@ -8,7 +8,7 @@ public class Review {
 	private String reviewContent;
 	private int reviewViewCnt;
 	private LocalDateTime reviewRegDate; //등록일자
-	private LocalDateTime UpdatedAt;     //수정일자
+	private LocalDateTime reviewUpdatedAt;     //수정일자
 	private String reviewWriter; //외래 키(User-userId참조)
 	private int videoId; //외래 키(Video-videoID참조)
 	
@@ -19,13 +19,13 @@ public class Review {
 	
 	//모든 필드를 포함하는 생성자
 	public Review(int reviewId, String reviewTitle, String reviewContent, int reviewViewCnt,
-			LocalDateTime reviewRegDate, LocalDateTime updatedAt, String reviewWriter, int videoId) {
+			LocalDateTime reviewRegDate, LocalDateTime reviewUpdatedAt, String reviewWriter, int videoId) {
 		super();
 		this.reviewTitle = reviewTitle;
 		this.reviewContent = reviewContent;
 		this.reviewViewCnt = reviewViewCnt;
 		this.reviewRegDate = reviewRegDate;
-		UpdatedAt = updatedAt;
+		this.reviewUpdatedAt = reviewUpdatedAt;
 		this.reviewWriter = reviewWriter;
 		this.videoId = videoId;
 	}
@@ -71,12 +71,12 @@ public class Review {
 		this.reviewRegDate = reviewRegDate;
 	}
 
-	public LocalDateTime getUpdatedAt() {
-		return UpdatedAt;
+	public LocalDateTime getreviewUpdatedAt() {
+		return reviewUpdatedAt;
 	}
 
-	public void setUpdatedAt(LocalDateTime updatedAt) {
-		UpdatedAt = updatedAt;
+	public void setreviewUpdatedAt(LocalDateTime reviewUpdatedAt) {
+		this.reviewUpdatedAt = reviewUpdatedAt;
 	}
 
 	public String getReviewWriter() {
@@ -99,7 +99,7 @@ public class Review {
 	@Override
 	public String toString() {
 		return "Review [reviewId=" + reviewId + ", reviewTitle=" + reviewTitle + ", reviewContent=" + reviewContent
-				+ ", reviewViewCnt=" + reviewViewCnt + ", reviewRegDate=" + reviewRegDate + ", UpdatedAt=" + UpdatedAt
+				+ ", reviewViewCnt=" + reviewViewCnt + ", reviewRegDate=" + reviewRegDate + ", UpdatedAt=" + reviewUpdatedAt
 				+ ", reviewWriter=" + reviewWriter + ", videoId=" + videoId + "]";
 	}	
 }

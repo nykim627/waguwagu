@@ -7,7 +7,7 @@ import com.waguwagu.dto.Review;
 public interface ReviewDao {
 	
 	//전체 리뷰 조회
-	abstract List<Review> getList();
+	abstract List<Review> getList(int videoId);
 	
 	//리뷰 상세 조회
 	abstract Review selectOne(int reviewId);

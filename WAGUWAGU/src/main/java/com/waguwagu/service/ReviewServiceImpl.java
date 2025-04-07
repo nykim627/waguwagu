@@ -19,28 +19,28 @@ public class ReviewServiceImpl implements ReviewService {
 	private ReviewDao dao = ReviewDaoImpl.getInstance();
 
 	@Override
-	public List<Review> getList() {
-		return null;
+	public List<Review> getList(int videoId) {
+		return dao.getList(videoId);
 	}
 
 	@Override
 	public Review getReview(int reviewId) {
-		return null;
+		return dao.selectOne(reviewId);
 	}
 
 	@Override
 	public boolean writeReview(Review review) {
-		return false;
+		return dao.insertReview(review);
 	}
 
 	@Override
 	public boolean modifyReview(Review review) {
-		return false;
+		return dao.updateReview(review);
 	}
 
 	@Override
 	public boolean removeReview(int reviewId) {
-		return false;
+		return dao.deleteReview(reviewId);
 	}
 
 }
