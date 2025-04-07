@@ -13,10 +13,14 @@ public class User {
 	}
     
     //모든 필드를 포함하는 생성자
-	public User(String userId, String password) {
-    	this.userId = userId;
-    	this.password = password;
-    }
+	public User(String userId, String password, String name, String gender, String email) {
+		super();
+		this.userId = userId;
+		this.password = password;
+		this.name = name;
+		this.gender = gender;
+		this.email = email;
+	}
 
 	//getter & setter
 	public String getUserId() {

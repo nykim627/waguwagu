@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS waguwagu;
 CREATE DATABASE IF NOT EXISTS waguwagu;
 USE waguwagu;
  
