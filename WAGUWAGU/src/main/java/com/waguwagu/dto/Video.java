@@ -18,7 +18,7 @@ public class Video {
 	
 	public Video() {
 	}
-
+	
 	public Video(int videoId, String videoTitle, String videoUrl, String videoImgUrl, String videoLevel,
 			String videoCat, int videoViewCnt) {
 		
@@ -128,5 +128,7 @@ public class Video {
 				+ videoUrl + ", videoImgUrl=" + videoImgUrl + ", videoLevel=" + videoLevel + ", videoCat=" + videoCat
 				+ ", videoViewCnt=" + videoViewCnt + "]";
 	}
+	
+	
 	
 }
