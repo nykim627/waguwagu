@@ -1,6 +1,9 @@
 DROP DATABASE IF EXISTS waguwagu;
 CREATE DATABASE IF NOT EXISTS waguwagu;
 USE waguwagu;
+DROP TABLE IF EXISTS review;
+DROP TABLE IF EXISTS videoPick;
+DROP TABLE IF EXISTS video;
  
  CREATE TABLE IF NOT EXISTS `user`(
  `userId` 	VARCHAR(40) PRIMARY KEY NOT NULL, 
@@ -18,7 +21,7 @@ USE waguwagu;
  `videoLevel` ENUM('상', '중', '하') NOT NULL,
  `videoCat` ENUM('디저트', '양식', '중식', '한식', '일식') NOT NULL,
  `videoViewCnt` INT NOT NULL DEFAULT 0,
- `videoRegDate` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ `videoRegDate` DATE NOT NULL,
  `videoOwner` VARCHAR(40) NOT NULL
  );
  
