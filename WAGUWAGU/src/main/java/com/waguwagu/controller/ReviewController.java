@@ -195,11 +195,9 @@ public class ReviewController extends HttpServlet {
 			request.getRequestDispatcher("/WEB-INF/review/writeform.jsp").forward(request, response);
 		}else {
 			//리뷰작성불가 -> 리뷰 목록 페이지로 이동
-			request.setAttribute("errorMessage", "로그인한 회원만 작성가능합니다.");
+			session.setAttribute("errorMessage", "로그인한 회원만 작성가능합니다.");
 			//영상 번호에 맞는 모든 리뷰 목록 불러오기
-			List<Review> videoIdList = service.getList(videoId);
-			request.setAttribute("videoIdList", videoIdList);
-			request.getRequestDispatcher("/WEB-INF/review/list.jsp").forward(request, response);
+			response.sendRedirect("review?act=totallist&videoId=" + videoId);
 		}
 		
 	}

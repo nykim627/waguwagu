@@ -28,7 +28,7 @@ public class ReviewDaoImpl implements ReviewDao {
 	@Override
 	public List<Review> getList(int videoId) {
 		List<Review> list = new ArrayList<>();
-		String sql = "SELECT * FROM review WHERE videoId = ?"; // 특정영상에 대한 모든 리뷰 목록 반환
+		String sql = "SELECT * FROM review WHERE videoId = ? ORDER BY reviewRegDate DESC"; // 특정영상에 대한 모든 리뷰 목록 반환(최근등록순)
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
