@@ -17,6 +17,6 @@ public interface UserDao {
     abstract User validateUser(String userId, String password);
     
     //사용자 삭제(회원탈퇴)
-    abstract boolean deleteUser(String userId);
+    abstract boolean deleteUser(User user);
 
 }

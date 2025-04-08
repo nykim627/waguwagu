@@ -28,12 +28,49 @@ public class UserDaoImpl implements UserDao {
 	//사용자 존재 여부 확인(이미 존재하는 아이디)
 	@Override
 	public boolean isUserExist(String userId) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT * FROM USER WHERE userId = ?";
+		try {
+			conn = util.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userId);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			util.close(rs, pstmt, conn);
+		}
 		return false;
 	}
 
 	//사용자 정보를 데이터베이스에 저장
 	@Override
 	public boolean saveUser(User user) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "INSERT INTO USER VALUES (?,?,?,?,?)";
+		
+		try {
+			conn = util.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, user.getUserId());
+			pstmt.setString(2, user.getPassword());
+			pstmt.setString(3, user.getEmail());
+			pstmt.setString(4, user.getName());
+			pstmt.setString(5, user.getGender());
+			int rs = pstmt.executeUpdate();
+			if(rs==1) return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			util.close(conn, pstmt);
+		}
 		return false;
 	}
 
@@ -70,7 +107,19 @@ public class UserDaoImpl implements UserDao {
 
 	//사용자 삭제(회원탈퇴)
 	@Override
-	public boolean deleteUser(String userId) {
+	public boolean deleteUser(User user) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "DELETE FROM USER WHERE userId = ?";
+		try {
+			conn = util.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, user.getUserId());
+			int rs = pstmt.executeUpdate();
+			if(rs==1) return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return false;
 	}
 
