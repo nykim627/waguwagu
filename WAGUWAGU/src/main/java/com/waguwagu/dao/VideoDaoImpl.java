@@ -32,7 +32,7 @@ public class VideoDaoImpl implements VideoDao {
 		List<Video> list = new ArrayList<>();
 		String sql = """
 				SELECT v.*, COUNT(vp.videoId) AS pickCount
-				FROM video
+				FROM video v
 				LEFT JOIN videoPick vp ON v.videoId = vp.videoId
 				GROUP BY v.videoId
 				ORDER BY videoViewCnt DESC
@@ -77,7 +77,7 @@ public class VideoDaoImpl implements VideoDao {
 		List<Video> list = new ArrayList<>();
 		String sql = """
 				SELECT v.*, COUNT(vp.videoId) AS pickCount
-				FROM video
+				FROM video v
 				LEFT JOIN videoPick vp ON v.videoId = vp.videoId
 				GROUP BY v.videoId
 				ORDER BY videoRegDate DESC

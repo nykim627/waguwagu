@@ -17,7 +17,7 @@ public class VideoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private VideoService service = VideoServiceImpl.getInstance();
 
-	protected void seervice(HttpServletRequest request, HttpServletResponse response)
+	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String act = request.getParameter("act");
 		
@@ -43,25 +43,25 @@ public class VideoController extends HttpServlet {
 
 	private void doListByViewCnt(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("videoList", service.getListByPickCnt());
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.getRequestDispatcher("main.jsp").forward(request, response);
 	}
 
 	private void doListByRegTime(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("videoList", service.getListByRegTime());
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.getRequestDispatcher("main.jsp").forward(request, response);
 		
 	}
 
 	private void doListByPickCnt(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("videoList", service.getListByPickCnt());
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.getRequestDispatcher("main.jsp").forward(request, response);
 		
 	}
 
 	private void doListByCat(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String cat = request.getParameter("category");
 		request.setAttribute("videoList", service.getListOfCat(cat));
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.getRequestDispatcher("main.jsp").forward(request, response);
 		
 	}
 
