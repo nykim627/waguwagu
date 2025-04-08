@@ -90,8 +90,7 @@ User loggedInUser = (User) session.getAttribute("loggedInUser");
 	if (errorMessage != null) {
 	%>
 	<script type="text/javascript">
-			alert("<%=errorMessage%>
-		");
+			alert("<%=errorMessage%>");
 	</script>
 	<%
 	}
