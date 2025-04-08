@@ -60,6 +60,7 @@
 
         .btn-custom:hover {
             background-color: #1e2f2f;
+            color: white; /* 텍스트 색 유지 */
         }
 
         a.text-info {
@@ -90,7 +91,7 @@
                     <c:forEach items="${videoIdList}" var="review">
                         <tr>
                             <td>
-                                <a href="review?act=detail&reviewId=${review.reviewId}" class="text-decoration-none text-info">
+                                <a href="review?act=detail&reviewId=${review.reviewId}&videoId=${review.videoId}" class="text-decoration-none text-info">
                                     ${review.reviewTitle}
                                 </a>
                             </td>

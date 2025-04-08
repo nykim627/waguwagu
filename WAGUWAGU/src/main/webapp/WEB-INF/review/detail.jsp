@@ -72,17 +72,14 @@
             padding: 8px 20px;
             font-size: 14px;
             text-decoration: none;
+            margin: 3px;
         }
 
         .btn-custom:hover {
             background-color: #1e2f2f;
             color: white;
         }
-
-        .btn-outline-danger {
-            border-radius: 20px;
-        }
-
+        
         a {
             color: #212529;
             text-decoration: none;
@@ -113,7 +110,7 @@
                 <a href="review?act=updateform&reviewId=${review.reviewId}&videoId=${review.videoId}"
                    class="btn btn-custom">리뷰 수정하기</a>
                 <a href="review?act=remove&reviewId=${review.reviewId}&videoId=${review.videoId}"
-                   class="btn btn-outline-danger">리뷰 삭제하기</a>
+                   class="btn btn-custom">리뷰 삭제하기</a>
             </div>
         </c:if>
     </div>

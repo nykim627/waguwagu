@@ -14,7 +14,7 @@
 		<div class="carousel-item">
 			<img src="images/image3.jpg" class="d-block w-100" alt="음식 이미지 3">
 		</div>
-				<div class="carousel-item">
+		<div class="carousel-item">
 			<img src="images/image4.jpg" class="d-block w-100" alt="음식 이미지 4">
 		</div>
 	</div>
