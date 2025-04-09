@@ -74,7 +74,7 @@
             <p>
                 <c:choose>
                     <c:when test="${not empty user}">
-                        안녕하세요, <strong>${user.userId}</strong>님! 오늘도 좋은 하루 되세요 🌿
+                        안녕하세요, <strong>${user.name}</strong>님! 오늘도 좋은 하루 되세요 🌿
                     </c:when>
                     <c:otherwise>
                         로그인하고 더 많은 기능을 이용해보세요 🙌
