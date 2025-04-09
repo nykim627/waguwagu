@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <div id="tm-image-slider" class="carousel slide carousel-fade"
-	data-bs-ride="carousel" data-bs-interval="5000">
+	data-bs-ride="carousel" data-bs-interval="4000">
 	<!-- 슬라이드 표시 영역 -->
 	<div class="carousel-inner">
 		<div class="carousel-item active">
