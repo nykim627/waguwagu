@@ -10,15 +10,15 @@
 	<div class="container-fluid position-relative">
 		<div class="row">
 			<div class="col-7 col-md-4">
-				<a href="index2.jsp"> <!-- <i class="fas fa-video tm-site-logo mb-3"></i> -->
+				<a href="index.jsp"> <!-- <i class="fas fa-video tm-site-logo mb-3"></i> -->
 					<h1 class="tm-site-name">WAGUWAGU</h1>
 				</a>
 			</div>
 			<div class="col-5 col-md-8 d-flex justify-content-end align-items-center">
 			    <!-- 로그인된 유저 이름 표시 -->
                 <c:if test="${not empty loggedInUser}">
-					<div class="me-3 text-black" style="font-size: 1.0rem;">
-    					<strong>🖤${loggedInUser.userId}🖤</strong>
+					<div class="me-3 text-black" style="font-size: 1.0rem; white-space: nowrap;">
+    					<strong>🖤 ${loggedInUser.name}&nbsp;님 🖤</strong>
 					</div>
                 </c:if>
                 
